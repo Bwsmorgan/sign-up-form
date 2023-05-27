@@ -24,7 +24,7 @@
 
     <div class="right-side">
 
-        <div class="top-form">
+        <div class="top-right">
             <h3>
                 This is not a real online service! You know you need something<br>like this in your life to help you realize your deepest dreams.<br>Sign up <em>now</em> to get started.<br><br>You <em>know</em> you want to.
             </h3>
@@ -33,40 +33,39 @@
         <div class="sign-up-form">
 
             <div class="sign-up-form-child">
-                <h2>Let's do this!
-
-                </h2>
+                <h2>Let's do this!</h2>
             </div>
 
             <form action="#" method="post" id="signup-form" class="sign-up-form-child1">
 
                 <div class="sign-up-form-child2">
                     <div>
-                        <label for="firstname">FIRST NAME<br></label>
+                        <label for="firstname">FIRST NAME*<br></label>
                         <input type="text" id="firstname" required>
                     </div>
                     <div>
-                        <label for="email">EMAIL<br></label>
-                        <input type="email" id="email">
+                        <label for="email">EMAIL*<br></label>
+                        <input type="email" id="email" required>
                     </div>
                     <div>
-                        <label for="password">PASSWORD<br></label>
-                        <input type="password" id="password">
+                        <label for="password">PASSWORD*<br></label>
+                        <input type="password" id="password" name="password" required>
                     </div>
+                    <div id="error-msg" style="font-size: 0.5rem; margin:0; font-weight: 400;"></div>
                 </div>
                 
                 <div class="sign-up-form-child3">
                     <div>
-                        <label for="lastname">LAST NAME<br></label>
+                        <label for="lastname">LAST NAME*<br></label>
                         <input type="text" id="lastname" required>
                     </div>
                     <div>
                         <label for="phone-number">PHONE NUMBER<br></label>
-                        <input type="tel" id="phone-number">
+                        <input type="tel" id="phone-number" maxlength="12" pattern="[0-9]{3}[-' '.][0-9]{3}[-' '.][0-9]{4}" placeholder="eg. 123-456-7890" required>
                     </div>
                     <div>
-                        <label for="confirm-password">CONFIRM PASSWORD<br></label>
-                        <input type="password" id="confirm-password">
+                        <label for="confirm-password">CONFIRM PASSWORD*<br></label>
+                        <input type="password" id="confirm-password" name="confirm-password" required>
                     </div>
                 </div>
 
@@ -82,6 +81,55 @@
         </div>
 
     </div>
+
+    <script>
+
+        let password_value = document.querySelector('#password');
+        let confirmed_password_value = document.querySelector('#confirm-password');
+        let output = document.querySelector('#error-msg');
+        
+        // console.log(password_value.value);
+        // console.log(confirmed_password_value.value);
+    
+        // if (password_value.value == '' || confirmed_password_value.value == ''){
+        //         output.innerHTML = ''
+        //     }
+
+        function check_password() {
+
+            console.log(password_value.value);
+            console.log(confirmed_password_value.value);
+
+         
+            
+            output.innerText = password_value.value == confirmed_password_value.value ? "Passwords match" : "Passwords do not match";
+        }
+
+     
+        confirmed_password_value.addEventListener('keyup', () => { 
+            
+            if (confirmed_password_value.value.length == 0){
+                output.innerHTML = '';
+                
+            }
+            else if (password_value.value.length != 0) {
+                check_password();
+            }
+        });
+
+        password_value.addEventListener('keyup', () => {
+           
+            if (password_value.value.length == 0){
+                output.innerHTML = '';
+                console.log('in')
+            }
+
+            else if (confirmed_password_value.value.length != 0) {
+                check_password();
+            }
+        });
+
+    </script>
 
 </body>
 </html>
