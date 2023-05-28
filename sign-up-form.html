@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:ital,wght@0,100;0,300;0,500;1,300&display=swap" rel="stylesheet">
     
+    
 </head>
 <body>
     
@@ -65,7 +66,7 @@
                     </div>
                     <div>
                         <label for="confirm-password">CONFIRM PASSWORD*<br></label>
-                        <input type="password" id="confirm-password" name="confirm-password" required>
+                        <input type="password" id="confirm-password" name="password" required>
                     </div>
                 </div>
 
@@ -82,54 +83,7 @@
 
     </div>
 
-    <script>
-
-        let password_value = document.querySelector('#password');
-        let confirmed_password_value = document.querySelector('#confirm-password');
-        let output = document.querySelector('#error-msg');
-        
-        // console.log(password_value.value);
-        // console.log(confirmed_password_value.value);
-    
-        // if (password_value.value == '' || confirmed_password_value.value == ''){
-        //         output.innerHTML = ''
-        //     }
-
-        function check_password() {
-
-            console.log(password_value.value);
-            console.log(confirmed_password_value.value);
-
-         
-            
-            output.innerText = password_value.value == confirmed_password_value.value ? "Passwords match" : "Passwords do not match";
-        }
-
-     
-        confirmed_password_value.addEventListener('keyup', () => { 
-            
-            if (confirmed_password_value.value.length == 0){
-                output.innerHTML = '';
-                
-            }
-            else if (password_value.value.length != 0) {
-                check_password();
-            }
-        });
-
-        password_value.addEventListener('keyup', () => {
-           
-            if (password_value.value.length == 0){
-                output.innerHTML = '';
-                console.log('in')
-            }
-
-            else if (confirmed_password_value.value.length != 0) {
-                check_password();
-            }
-        });
-
-    </script>
+    <script src="./sign-up-form.js"></script>
 
 </body>
 </html>

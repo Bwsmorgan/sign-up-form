@@ -94,7 +94,7 @@ input {
     height: 20px;
     /* border-color:#c4c2c2; */
     outline: none;
-    border: 1px solid #d8d8d8;
+    border: 1px solid rgb(216, 216, 216);
     border-radius: 5px;
     margin: 4px 0;
     text-indent: 8px;
@@ -108,8 +108,8 @@ input {
 .top-right > h3 {
     margin-top: 70px;
     margin-left: 40px;
-
 }
+
 .bottom-form > button {
     margin-top: 20px;
     height: 35px;
@@ -131,9 +131,6 @@ input:focus {
     box-shadow: rgba(151, 155, 181, 0.62) 0px 5px 8px;
 }
 
-/* input[type="password"]:invalid {
-    border-color: rgb(200, 56, 56);
-} */
 
 input:valid{
     border-color:rgb(105, 137, 31);
@@ -143,4 +140,28 @@ input::placeholder{
     font-size: 0.7rem;
     text-indent:8px;
     color: #d8d8d8;;
+}
+
+@media screen and (max-width:800px) {
+
+    .sign-up-form-child3 {
+        margin-left: -10px;
+    }
+
+    .top-right > h3{
+        margin-top: 30px;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .sign-up-form, 
+    .top-right, 
+    .bottom-form{
+        width: 100vw;
+    }
+
+    .image-sidebar {
+        width: 0;
+        background-image: none;
+    }
 }
