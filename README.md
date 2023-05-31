@@ -1,4 +1,4 @@
 # Sign Up Form
 A sign-up form for an imaginary service.
 
-![Sign Up form screenshot](/Photos/sign-up-form%20screenshot%20(README).png)
+![Sign Up form screenshot](/Volumes/Untitled/WORK/WEB DEVELOPMENT/The Odin Project/HTML:JAVASCRIPT/PROJECTS/sign-up-form/Photos/sign-up-form screenshot (README).png)
